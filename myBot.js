@@ -5,6 +5,10 @@
 const { Wechaty } = require("wechaty"); //import { Wechaty } from 'wechaty', node v9.11.1 not support all es6;
 //es6，环境支持的配置方式;
 
+//npm install moment-timezone
+let moment = require("moment-timezone");
+//http://momentjs.com/timezone/docs/#/using-timezones/converting-to-zone/
+
 // Singleton
 Wechaty.instance()
 
@@ -53,18 +57,21 @@ Wechaty.instance()
     const SPEAKWORDS = reciveMessage.content();
     const ROOM = reciveMessage.room();
 
+    let Time = moment()
+      .tz("Asia/Shanghai")
+      .format(); //make sure no matter where are you, the time is in Beijing;
+
+    //check if people send message to hiself, otherwise it will loop;
     if (reciveMessage.self()) {
       return;
     }
 
     if (ROOM != null) {
       console.log(
-        `Group Name: ${ROOM}; Speak Person: ${SPEAKPERSON}; Speak Words: ${SPEAKWORDS}`
+        `${Time} This message from group: ${ROOM} and person ${SPEAKPERSON} says ${SPEAKWORDS}`
       );
     } else {
-      console.log(
-        `This is personal message; Speak Person: ${SPEAKPERSON}; Speak Words: ${SPEAKWORDS}`
-      );
+      console.log(`${Time} This message from person ${SPEAKPERSON} says ${SPEAKWORDS}`);
     }
 
     //恶作剧，慎用！！！
