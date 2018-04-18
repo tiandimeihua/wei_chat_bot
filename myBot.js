@@ -71,12 +71,32 @@ Wechaty.instance()
         `${Time} This message from group: ${ROOM} and person ${SPEAKPERSON} says ${SPEAKWORDS}`
       );
     } else {
-      console.log(`${Time} This message from person ${SPEAKPERSON} says ${SPEAKWORDS}`);
+      console.log(
+        `${Time} This message from person ${SPEAKPERSON} says ${SPEAKWORDS}`
+      );
+    }
+
+    //You may change code which above this line.
+    //----------------------------------------------------------------;
+
+    if (/^淘宝$/i.test(reciveMessage.content())) {
+      await reciveMessage.say("兔子，我爱你");
+    }
+
+    if (/^时间$/i.test(reciveMessage.content())) {
+      await reciveMessage.say(Time);
+    }
+
+    if (/^徐帅$/i.test(reciveMessage.content())) {
+      await reciveMessage.say("http://xugaoyang.com/");
     }
 
     //恶作剧，慎用！！！
     if (/^@机器人$/i.test(reciveMessage.content())) {
       await reciveMessage.say("@于鑫机器人");
     }
+
+    //----------------------------------------------------------------;
+    //Add you code below this line, thank you.
   })
   .start();
