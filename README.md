@@ -3,12 +3,13 @@
 ---
 
 ## Bot for WeChat. Powered by Puppeteer / Node.js / TypeScript / Docker [https://chatie.io/wechaty/](https://chatie.io/wechaty/)
+
 ## WECHATY [https://github.com/Chatie/wechaty/](https://github.com/Chatie/wechaty/)
 
 :octocat: <https://github.com/chatie/wechaty>  
 :beetle: <https://github.com/chatie/wechaty/issues>  
 :book: <https://github.com/chatie/wechaty/wiki>  
-:whale: <https://hub.docker.com/r/zixia/wechaty>  
+:whale: <https://hub.docker.com/r/zixia/wechaty>
 
 ---
 
@@ -28,9 +29,16 @@ The above 15 minute video tutorial is a good start point if you are new to Wecha
 
 ```shell
 npm init
-npm install wechaty
-npm install qrcode-terminal
+npm install wechaty             //引入微信框架;
+npm install qrcode-terminal     //引入修改QRCode link to image in iterm;
+npm install moment-timezone     //引入Time-zones 保证时间唯一性;
 node mybot.js
 ```
 
 ---
+
+```javascript
+const { Wechaty } = require("wechaty");
+let qrcode = require("qrcode-terminal");
+let moment = require("moment-timezone");
+```
