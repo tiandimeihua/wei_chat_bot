@@ -5,9 +5,17 @@
 const { Wechaty } = require("wechaty"); //import { Wechaty } from 'wechaty', node v9.11.1 not support all es6;
 //es6，环境支持的配置方式;
 
+//let fs = require("fs");
+
+//npm install --save jsonfile
+let jsonfile = require("jsonfile");
+//https://github.com/jprichardson/node-jsonfile
+
 //npm install moment-timezone
 let moment = require("moment-timezone");
 //http://momentjs.com/timezone/docs/#/using-timezones/converting-to-zone/
+
+let file = "./data.txt";
 
 // Singleton
 Wechaty.instance()
@@ -67,13 +75,13 @@ Wechaty.instance()
     }
 
     if (ROOM != null) {
-      console.log(
-        `${Time} This message from group: ${ROOM} and person ${SPEAKPERSON} says ${SPEAKWORDS}`
-      );
+      let obj = `${Time} This message from group: ${ROOM} and person ${SPEAKPERSON} says ${SPEAKWORDS}`;
+      console.log(obj);
+      jsonfile.writeFileSync(file, obj, { flag: "a" });
     } else {
-      console.log(
-        `${Time} This message from person ${SPEAKPERSON} says ${SPEAKWORDS}`
-      );
+      let obj = `${Time} This message from person ${SPEAKPERSON} says ${SPEAKWORDS}`;
+      console.log(obj);
+      jsonfile.writeFileSync(file, obj, { flag: "a" });
     }
 
     //You may change code which above this line.
