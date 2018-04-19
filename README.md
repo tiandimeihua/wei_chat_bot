@@ -15,7 +15,7 @@
 
 ### A Great Live Coding Tutorial
 
-[![http://blog.chatie.io/download/2017/lijiarui-wechaty-quick-start-guide-video.jpg]](http://blog.chatie.io/download/2017/lijiarui-wechaty-quick-start-guide-video.jpg)(https://blog.chatie.io/guide/2017/01/01/getting-started-wechaty.html)
+[![<http://blog.chatie.io/download/2017/lijiarui-wechaty-quick-start-guide-video.jpg]](http://blog.chatie.io/download/2017/lijiarui-wechaty-quick-start-guide-video.jpg)(https://blog.chatie.io/guide/2017/01/01/getting-started-wechaty.html)>
 
 The above 15 minute video tutorial is a good start point if you are new to Wechaty.
 
