@@ -15,7 +15,8 @@ let jsonfile = require("jsonfile");
 let moment = require("moment-timezone");
 //http://momentjs.com/timezone/docs/#/using-timezones/converting-to-zone/
 
-let file = "./data.txt";
+var dateFileRead = require("./test.json");
+let dateFileWrite = "./dataWriteForAll.txt";
 
 // Singleton
 Wechaty.instance()
@@ -77,11 +78,11 @@ Wechaty.instance()
     if (ROOM != null) {
       let obj = `${Time} This message from group: ${ROOM} and person ${SPEAKPERSON} says ${SPEAKWORDS}`;
       console.log(obj);
-      jsonfile.writeFileSync(file, obj, { flag: "a" });
+      jsonfile.writeFileSync(dateFileWrite, obj, { flag: "a" });
     } else {
       let obj = `${Time} This message from person ${SPEAKPERSON} says ${SPEAKWORDS}`;
       console.log(obj);
-      jsonfile.writeFileSync(file, obj, { flag: "a" });
+      jsonfile.writeFileSync(dateFileWrite, obj, { flag: "a" });
     }
 
     //You may change code which above this line.
@@ -89,6 +90,30 @@ Wechaty.instance()
 
     if (/^淘宝$/i.test(reciveMessage.content())) {
       await reciveMessage.say("兔子，我爱你");
+    }
+
+    //load json file;
+    if (/^电影$/i.test(reciveMessage.content())) {
+      let index = 1;
+      let body = dateFileRead[index];
+      await reciveMessage.say(
+        `电影史排名#${body.index}
+        ${body.title}
+        (${body.original_title})
+        豆瓣评分：${body.average}
+        影片类型：${body.genres[0]} ${body.genres[1]}
+        上映年份：${body.year}
+        导演：${body.directors[0]}
+        主演：${body.casts[0]} ${body.casts[1]}
+        `
+      );
+    }
+
+    if (
+      /^淘宝$/i.test(reciveMessage.content()) &&
+      reciveMessage.from().name() == `我是611的小奶狗`
+    ) {
+      await reciveMessage.say("兔子，我爱你1");
     }
 
     if (/^时间$/i.test(reciveMessage.content())) {
