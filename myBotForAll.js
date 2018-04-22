@@ -88,10 +88,6 @@ Wechaty.instance()
     //You may change code which above this line.
     //----------------------------------------------------------------;
 
-    if (/^淘宝$/i.test(reciveMessage.content())) {
-      await reciveMessage.say("兔子，我爱你");
-    }
-
     //load json file;
     if (/^电影$/i.test(reciveMessage.content())) {
       let index = 1;
@@ -109,11 +105,12 @@ Wechaty.instance()
       );
     }
 
+    
     if (
-      /^淘宝$/i.test(reciveMessage.content()) &&
-      reciveMessage.from().name() == `我是611的小奶狗`
+      /^Chang-Me-Here$/i.test(reciveMessage.content()) &&
+      reciveMessage.from().name() == `CHange-Me-Here`
     ) {
-      await reciveMessage.say("兔子，我爱你1");
+      await reciveMessage.say("Chang-Me-Here");
     }
 
     if (/^时间$/i.test(reciveMessage.content())) {
