@@ -48,3 +48,12 @@ let jsonfile = require("jsonfile");
 #### TODO
 
 * 修改 data.txt，创建文版按照时间，群组，不同创建，
+
+#### article write
+
+* 关于严格模式的重要性;
+* es6，环境支持的配置方式;
+* ${}使用方式，es5新特性,`vs";
+* 箭头函数;
+* 关联数组;
+* 字典升序;
