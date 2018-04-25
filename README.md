@@ -35,7 +35,7 @@ npm install underscore          //reOrder the hash list;
 npm install blueimp-md5         //md5 the string;
 npm install axios               //do post;
 npm install qs
-node mybot.js
+node myBotChat.js               //智能闲聊;
 ```
 
 * [QRCode Terminal](https://github.com/gtanner/qrcode-terminal)
