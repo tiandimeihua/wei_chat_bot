@@ -31,16 +31,32 @@ npm install wechaty             //引入微信框架;
 npm install qrcode-terminal     //引入修改QRCode link to image in iterm;
 npm install moment-timezone     //引入Time-zones 保证时间唯一性;
 npm install --save jsonfile     //引入write file package;
+npm install underscore          //reOrder the hash list;
+npm install blueimp-md5         //md5 the string;
+npm install axios               //do post;
+npm install qs
 node mybot.js
 ```
+
+* [QRCode Terminal](https://github.com/gtanner/qrcode-terminal)
+* [Moment Timezone](https://momentjs.com/timezone/)
+* [Node.js - jsonfile](https://github.com/jprichardson/node-jsonfile)
+* [underscorejs](http://underscorejs.org/)
+* [blueimp-md5](https://github.com/blueimp/JavaScript-MD5)
+* [axios](https://github.com/axios/axios)
+* [qs](https://www.npmjs.com/package/qs)
 
 ---
 
 ```javascript
 const { Wechaty } = require("wechaty");
-let qrcode = require("qrcode-terminal");
-let moment = require("moment-timezone");
-let jsonfile = require("jsonfile");
+const qrcode = require("qrcode-terminal");
+const moment = require("moment-timezone");
+const jsonfile = require("jsonfile");
+const _ = require("underscore");
+const md5 = require("blueimp-md5");
+const axios = require("axios");
+const qs = require("qs");
 ```
 
 ---
@@ -53,7 +69,7 @@ let jsonfile = require("jsonfile");
 
 * 关于严格模式的重要性;
 * es6，环境支持的配置方式;
-* ${}使用方式，es5新特性,`vs";
+* ${}使用方式，es5 新特性,`vs";
 * 箭头函数;
 * 关联数组;
 * 字典升序;
